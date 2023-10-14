@@ -1,10 +1,4 @@
- body{
-    font-family: Arial, sans-serif;
-    background-color:  antiquewhite;
-    margin: 0;
-    padding: 0;
-    
-}
+
 .label{
   display: block;
   font-weight: bold;
@@ -59,7 +53,6 @@
 }
 
 .register-btn {
-  width: 140px;
   padding: 14px;
   background-color:#cc7a00;
   color:black;
@@ -71,9 +64,7 @@
   text-align: center;
  }
 
- .button{
-  margin-left: 65px;
- }
+ 
 
 
  .message{

@@ -5,24 +5,32 @@
 
  import React, { useState } from "react";
 import howToUseApp from "../../API/howToUse.js";
+import Navbar from "./../../components/Navbar/Navbar";
+import Footer from "./../../components/Footer/Footer";
+import Card from './../../components/Card/Card';
+
 import "./About.css";
 
 const About = () => {
   const [aboutData] = useState(howToUseApp);
   return (
     <>
+    <Navbar/>
+
       <section className="common-section our-services">
         <div className="container mb-5">
           <div className="row">
-            <div className="col-12 col-lg-5 text-center our-service-leftside-img">
+            <div className="text-center our-service-leftside-img">
+            <div className="our-services-list">
+              <h3 className="mini-title">
+                -- AVAILABLE @ GOOGLE AND IOS APP STORE ONLY
+              </h3>
+              </div>
               <img src="https://www.ridester.com/wp-content/uploads/2021/07/ride_services_1.webp" alt="aboutusIMg"/>
             </div>
 
             {/* 1section right side data  */}
-            <div className="col-12 col-lg-7 our-services-list">
-              <h3 className="mini-title">
-                -- AVAILABLE @ GOOGLE AND IOS APP STORE ONLY
-              </h3>
+            <div className="our-services-list">
               <h1 className="main-heading">How to use the App?</h1>
 
               {aboutData.map((curElem) => {
@@ -49,18 +57,24 @@ const About = () => {
 
       {/* 2nd part of bayt us section  */}
 
-      <section className="common-section our-services our-services-rightside">
+      <section className="common-section our-services">
         <div className="container mb-5">
           <div className="row">
+            <div className="text-center our-service-leftside-img">
+            <div className="our-services-list">
+              <h3 className="mini-title">
+                -- AVAILABLE @ GOOGLE AND IOS APP STORE ONLY
+              </h3>
+              </div>
+              <img src="https://www.enterpriseappstoday.com/wp-content/uploads/2023/08/Ridesharing-Industry-statistics.jpg" alt="aboutusIMg"/>
+            </div>
+
             {/* 1section right side data  */}
-            <div className="col-12 col-lg-7 our-services-rightside-content d-flex justify-content-center align-items-start flex-column">
-              <h3 className="mini-title">-- SUPPORT IN ANY LANGUAGES</h3>
-              <h1 className="main-heading">
-                World class support is available 24/7
-              </h1>
+            <div className="our-services-list">
+              <h1 className="main-heading">Check the availability in your city...</h1>
 
               {aboutData.map((curElem) => {
-                const { id, title, info } = curElem;
+                const {id ,title, info } = curElem;
                 return (
                   <>
                     <div className="row our-services-info" key={id}>
@@ -76,15 +90,16 @@ const About = () => {
 
               <br />
               <button className="btn-style btn-style-border">learn more</button>
-              </div>
-
-            {/* images section  */}
-            <div className="col-12 col-lg-5  our-service-rightside-img">
-              <img src="https://www.enterpriseappstoday.com/wp-content/uploads/2023/08/Ridesharing-Industry-statistics.jpg" alt="aboutusIMg" />
             </div>
           </div>
         </div>
       </section>
+      <Footer/>
+      {/* images section  
+             <div className="our-service-rightside-img">
+              <img src="https://www.enterpriseappstoday.com/wp-content/uploads/2023/08/Ridesharing-Industry-statistics.jpg" alt="aboutusIMg" />
+            </div>
+            */}
     </>
   );
 };
